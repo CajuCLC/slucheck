@@ -1,58 +1,60 @@
-echo "Creating $HOSTNAME.txt"
-touch $HOSTNAME.txt
+echo -n "SERVER: "
+read SERVER
+echo "Creating $SERVER.txt"
+touch $SERVER.txt
 echo "Checking Hostname"
-hostname >> $HOSTNAME.txt
+hostname >> $SERVER.txt
 echo "Checking netstat"
-printf "\n\n=== netstat -ntpl ===\n\n" >> $HOSTNAME.txt
-netstat -ntpl >> $HOSTNAME.txt
+printf "\n\n=== netstat -ntpl ===\n\n" >> $SERVER.txt
+netstat -ntpl >> $SERVER.txt
 echo "Checking  NOVA"
-printf "\n\n=== ps -e | grep [n]ova ===\n\n" >> $HOSTNAME.txt
-ps -e | grep [n]ova >> $HOSTNAME.txt
+printf "\n\n=== ps -e | grep [n]ova ===\n\n" >> $SERVER.txt
+ps -e | grep [n]ova >> $SERVER.txt
 echo "Checking df -h"
-printf "\n\n=== df -h ===\n\n" >> $HOSTNAME.txt
-df -h >> $HOSTNAME.txt
+printf "\n\n=== df -h ===\n\n" >> $SERVER.txt
+df -h >> $SERVER.txt
 echo "Checking mount"
-printf "\n\n=== mount ===\n\n" >> $HOSTNAME.txt
-mount >> $HOSTNAME.txt
+printf "\n\n=== mount ===\n\n" >> $SERVER.txt
+mount >> $SERVER.txt
 echo "Checking PHP Version"
-printf "\n\n=== php -v ===\n\n" >> $HOSTNAME.txt
-php -v >> $HOSTNAME.txt
+printf "\n\n=== php -v ===\n\n" >> $SERVER.txt
+php -v >> $SERVER.txt
 echo "Checking Apache Version"
-printf "\n\n=== httpd -v ===\n\n" >> $HOSTNAME.txt
-httpd -v >> $HOSTNAME.txt
+printf "\n\n=== httpd -v ===\n\n" >> $SERVER.txt
+httpd -v >> $SERVER.txt
 echo "Checking vhost"
-printf "\n\n=== httpd -S ===\n\n" >> $HOSTNAME.txt
-httpd -S >> $HOSTNAME.txt
+printf "\n\n=== httpd -S ===\n\n" >> $SERVER.txt
+httpd -S >> $SERVER.txt
 echo "Checking top"
-printf "\n\n=== top -b -n1 | head -n 18 ===\n\n" >> $HOSTNAME.txt
-top -b -n1 | head -n 18 >> $HOSTNAME.txt
+printf "\n\n=== top -b -n1 | head -n 18 ===\n\n" >> $SERVER.txt
+top -b -n1 | head -n 18 >> $SERVER.txt
 echo "Checking free -m"
-printf "\n\n=== free -m ===\n\n" >> $HOSTNAME.txt
-free -m >> $HOSTNAME.txt
+printf "\n\n=== free -m ===\n\n" >> $SERVER.txt
+free -m >> $SERVER.txt
 echo "Checking autostart"
-printf "\n\n=== ls /etc/init.d/ ===\n\n" >> $HOSTNAME.txt
-ls /etc/init.d/ >> $HOSTNAME.txt
+printf "\n\n=== ls /etc/init.d/ ===\n\n" >> $SERVER.txt
+ls /etc/init.d/ >> $SERVER.txt
 echo "Checking cPanel"
-printf "\n\n=== rpm -qa | grep cpanel ===\n\n" >> $HOSTNAME.txt
-rpm -qa | grep cpanel >> $HOSTNAME.txt
+printf "\n\n=== rpm -qa | grep cpanel ===\n\n" >> $SERVER.txt
+rpm -qa | grep cpanel >> $SERVER.txt
 echo "Checking Plesk"
-printf "\n\n=== rpm -qa | grep plesk ===\n\n" >> $HOSTNAME.txt
-rpm -qa | grep plesk >> $HOSTNAME.txt
+printf "\n\n=== rpm -qa | grep plesk ===\n\n" >> $SERVER.txt
+rpm -qa | grep plesk >> $SERVER.txt
 echo "Checking Email"
-printf "\n\n=== grep 'status=sent' /var/log/mail* | grep '250 | tail -n 4 ===\n\n" >> $HOSTNAME.txt
-grep 'status=sent' /var/log/mail* | grep "(250" | tail -n 4 >> $HOSTNAME.txt
+printf "\n\n=== grep 'status=sent' /var/log/mail* | grep '250 | tail -n 4 ===\n\n" >> $SERVER.txt
+grep 'status=sent' /var/log/mail* | grep "(250" | tail -n 4 >> $SERVER.txt
 echo "Checking SSH Port"
-printf "\n\n=== grep Port /etc/ssh/sshd_config ===\n\n" >> $HOSTNAME.txt
-grep Port /etc/ssh/sshd_config >> $HOSTNAME.txt
+printf "\n\n=== grep Port /etc/ssh/sshd_config ===\n\n" >> $SERVER.txt
+grep Port /etc/ssh/sshd_config >> $SERVER.txt
 echo "Checking SSH PermitRootLogin"
-printf "\n\n=== less /etc/ssh/sshd_config | grep 'PermitRootLogin' ===\n\n" >> $HOSTNAME.txt
-less /etc/ssh/sshd_config | grep 'PermitRootLogin' >> $HOSTNAME.txt
+printf "\n\n=== less /etc/ssh/sshd_config | grep 'PermitRootLogin' ===\n\n" >> $SERVER.txt
+less /etc/ssh/sshd_config | grep 'PermitRootLogin' >> $SERVER.txt
 echo "Checking SSH Password Login"
-printf "\n\n=== egrep -v '^(#|$)' /etc/ssh/sshd_config | grep 'PasswordAuthentication' ===\n\n" >> $HOSTNAME.txt
-egrep -v '^(#|$)' /etc/ssh/sshd_config | grep 'PasswordAuthentication' >> $HOSTNAME.txt
+printf "\n\n=== egrep -v '^(#|$)' /etc/ssh/sshd_config | grep 'PasswordAuthentication' ===\n\n" >> $SERVER.txt
+egrep -v '^(#|$)' /etc/ssh/sshd_config | grep 'PasswordAuthentication' >> $SERVER.txt
 echo "Checking repolist"
-printf "\n\n=== yum repolist ===\n\n" >> $HOSTNAME.txt
-yum repolist >> $HOSTNAME.txt
+printf "\n\n=== yum repolist ===\n\n" >> $SERVER.txt
+yum repolist >> $SERVER.txt
 echo "Checking updates"
-printf "\n\n=== yum check-update ===\n\n" >> $HOSTNAME.txt
-yum check-update >> $HOSTNAME.txt
+printf "\n\n=== yum check-update ===\n\n" >> $SERVER.txt
+yum check-update >> $SERVER.txt
