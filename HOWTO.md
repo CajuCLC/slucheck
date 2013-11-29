@@ -1,20 +1,21 @@
 HOW TO USE
 ========
-First of all you will need to install sshpass on your OS.
-  CentOS: yum install sshpass
-  Ubuntu: apt-get install sshpass
-  MAC: I don't know.
-
-Now save the connections files:
+The script has changed and there is no need to install apps.
+All you have to do is download the connections scripts.
   CentOS: https://raw.github.com/CajuCLC/slucheck/master/sluconnectioncentos.sh
   Ubuntu: https://raw.github.com/CajuCLC/slucheck/master/sluconnectionubuntu.sh
 
-When you run these files, it will ask for a server name (just to save the txt file), IP of the machine and Password.
-It login into the server and get the files and run commands, then it will ask the name of the server again,
-I am trying to work on sending the information from one server to another.
-It will run the script, save the file with the Server name you gave and then copy to your personal computer.
-After that it will delete the files. I had to ask for the server name twice because I didn't figure out
-how to send information from one server to another.
+You can also install running git clone https://github.com/CajuCLC/slucheck.git
 
-Now the file will be on your machine with the server name you gave.
+1. When you run the script it will ask for SERVER name, this will be the txt file with all the information.
+2. The script will ask for the server IP.
+3. It will create a ssh-key file and copy to the remote host, it will ask the remote server password here.
+4. Now it will do all connections and run the script on the remote server, it will ask SERVER name again, use same name.
+5. This is the last part where the txt file is transfered and ssh-key and txt file is deleted from the remote server.
+6. Open the $SERVER.txt file on your server/computer and find all the informations there.
+
 Save it to the ticket and all done.
+
+Script created by:
+a. Eric Cavalcanti - Technical Account Manager - LATAM - Brazil
+b. Orlando Gentil - Linux System Administrator II - LATAM - Brazil
