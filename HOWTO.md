@@ -1,9 +1,9 @@
 HOW TO USE
 ========
 The script has changed and there is no need to install apps.
-All you have to do is download the connections scripts.
-  CentOS: https://raw.github.com/CajuCLC/slucheck/master/sluconnectioncentos.sh
-  Ubuntu: https://raw.github.com/CajuCLC/slucheck/master/sluconnectionubuntu.sh
+All you have to do is download the connections scripts.<br />
+  <strong>CentOS:</strong> https://raw.github.com/CajuCLC/slucheck/master/sluconnectioncentos.sh<br />
+  <strong>Ubuntu:</strong> https://raw.github.com/CajuCLC/slucheck/master/sluconnectionubuntu.sh
 
 You can also install running git clone https://github.com/CajuCLC/slucheck.git
 
@@ -16,6 +16,6 @@ You can also install running git clone https://github.com/CajuCLC/slucheck.git
 
 Save it to the ticket and all done.
 
-Script created by:
-a. Eric Cavalcanti - Technical Account Manager - LATAM - Brazil
-b. Orlando Gentil - Linux System Administrator II - LATAM - Brazil
+Script created by:<br />
+1. Eric Cavalcanti - Technical Account Manager - LATAM - Brazil<br />
+2. Orlando Gentil - Linux System Administrator II - LATAM - Brazil
